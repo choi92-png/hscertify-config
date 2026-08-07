@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2026.08.03",
-    "updated": "2026-08-02T18:14:37.817Z",
-    "note": "HS Certify 원격 셀렉터. AI 사이트 UI 변경 시 이 파일만 갱신하면 전 직원에게 자동 반영됨(앱 재배포 불필요)."
+    "version": "2026.08.06",
+    "updated": "2026-08-06T00:00:00.000Z",
+    "note": "HS Certify 원격 셀렉터. AI 사이트 UI 변경 시 이 파일만 갱신하면 전 직원에게 자동 반영됨(앱 재배포 불필요). 2026-08-06: 클로드 응답시작 감지를 언어무관 다중신호로 확장(streamingStart 실패 대응)."
   },
   "_remoteUrl": "https://raw.githubusercontent.com/choi92-png/hscertify-config/main/selectors.json",
   "chatgpt-web": {
@@ -49,10 +49,15 @@
     ],
     "send": [
       "button[aria-label=\"메시지 보내기\"]",
-      "button[aria-label*=\"Send\" i]"
+      "button[aria-label*=\"보내기\"]",
+      "button[aria-label*=\"Send\" i]",
+      "button[data-testid=\"send-button\"]"
     ],
     "streaming": [
       "button[aria-label=\"응답 중단\"]",
+      "button[aria-label*=\"중단\"]",
+      "button[aria-label*=\"Stop\" i]",
+      "button[data-testid*=\"stop\" i]",
       "[data-is-streaming=\"true\"]"
     ],
     "answer": [
